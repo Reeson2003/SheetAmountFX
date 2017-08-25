@@ -5,39 +5,30 @@ package com.fred.entity;
  */
 public class User {
     private long userId;
-    private String firstName;
-    private String lastName;
-    private String email;
+    private PersonalData personalData;
+    private LogData logData;
 
     public long getUserId() {
         return userId;
     }
-
     public void setUserId(long userId) {
         this.userId = userId;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public PersonalData getPersonalData() {
+        return personalData;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setPersonalData(PersonalData personalData) {
+        this.personalData = personalData;
     }
 
-    public String getLastName() {
-        return lastName;
+    public LogData getLogData() {
+        return logData;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLogData(LogData logData) {
+        this.logData = logData;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }

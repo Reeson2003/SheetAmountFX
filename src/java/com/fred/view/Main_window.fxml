@@ -10,66 +10,67 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.94" prefHeight="400.0" prefWidth="788.0" style="-fx-background-color: #bedfe4;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fred.view.MainWindowController">
-   <children>
-      <AnchorPane fx:id="leftBar" prefHeight="400.0" prefWidth="253.0" style="-fx-background-color: #3D4956;">
-         <children>
-            <Button fx:id="singUp" layoutX="121.0" layoutY="131.0" mnemonicParsing="false" onAction="#action" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #3999a8;" text="Sing up" />
-            <Label layoutX="48.0" layoutY="97.0" text="Password" textFill="#77b6bf" />
-            <Label layoutX="65.0" layoutY="69.0" text="Log in" textFill="#77b6bf" />
-            <TextField layoutX="103.0" layoutY="65.0" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #bedfe4;" />
-            <PasswordField layoutX="103.0" layoutY="93.0" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #bedfe4;" />
-            <Button onAction="#action" fx:id="logIn" layoutX="57.0" layoutY="131.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #3999a8;" text="Log in" />
-            <Button layoutX="33.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="155.0" style="-fx-background-color: #77b6bf;" text="Sheet amount" />
-            <Button layoutX="33.0" layoutY="232.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="155.0" style="-fx-background-color: #77b6bf;" text="Sheet amount" />
-            <Button layoutX="33.0" layoutY="263.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="155.0" style="-fx-background-color: #77b6bf;" text="Sheet amount" />
-            <Label layoutX="25.0" layoutY="10.0" prefHeight="55.0" prefWidth="210.0" text="Sheet Amount" textFill="#bedfe4">
-               <font>
-                  <Font size="26.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="rightBarSheetAmount" layoutX="256.0" layoutY="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.96" prefHeight="406.0" prefWidth="535.0" style="-fx-background-color: #3D5956;" visible="false">
-         <children>
-            <Label fx:id="userName" layoutX="33.0" layoutY="14.0" prefHeight="3.0" prefWidth="305.0" text="Label" textFill="#77b6bf" />
-            <Label fx:id="labelNameDistrict" layoutX="33.0" layoutY="47.0" text="Name district" textFill="#77b6bf" />
-            <TextField fx:id="textAreaNameDistrict" layoutX="118.0" layoutY="43.0" style="-fx-background-color: #bedfe4;" />
-            <Label fx:id="labelTrenchSize" layoutX="33.0" layoutY="84.0" text="Trench size" textFill="#77b6bf" />
-            <ComboBox fx:id="boxTrenchType" layoutX="118.0" layoutY="80.0" prefHeight="25.0" prefWidth="149.0" promptText="Trench type" style="-fx-background-color: #bedfe4;">
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
-            </ComboBox>
-            <Label fx:id="labelHeight" layoutX="118.0" layoutY="126.0" text="Height" textFill="#77b6bf" />
-            <TextField fx:id="textAreaHeight" layoutX="163.0" layoutY="122.0" prefHeight="25.0" prefWidth="104.0" style="-fx-background-color: #bedfe4;" />
-            <Label fx:id="labelWidth" layoutX="118.0" layoutY="162.0" text="Width" textFill="#77b6bf" />
-            <TextField fx:id="textAreaWidth" layoutX="163.0" layoutY="158.0" prefHeight="25.0" prefWidth="104.0" style="-fx-background-color: #bedfe4;" />
-            <Label fx:id="labelLineLong" layoutX="34.0" layoutY="204.0" text="Line long" textFill="#77b6bf" />
-            <TextField fx:id="textAreaNameDistrict1" layoutX="115.0" layoutY="200.0" prefHeight="29.0" prefWidth="149.0" style="-fx-background-color: #bedfe4;" />
-            <Label fx:id="labelNameDistrict11" layoutX="33.0" layoutY="226.0" prefHeight="51.0" prefWidth="71.0" text="Quantity of branches" textFill="#77b6bf" wrapText="true" />
-            <TextField fx:id="textAreaNameDistrict11" layoutX="115.0" layoutY="239.0" prefHeight="29.0" prefWidth="149.0" style="-fx-background-color: #bedfe4;" />
-            <Label fx:id="labelNameDistrict111" layoutX="32.0" layoutY="268.0" prefHeight="51.0" prefWidth="71.0" text="Long crossing" textAlignment="JUSTIFY" textFill="#77b6bf" wrapText="true" />
-            <TextField fx:id="textAreaLongCrossing" layoutX="114.0" layoutY="281.0" prefHeight="29.0" prefWidth="149.0" style="-fx-background-color: #bedfe4;" />
-            <Label fx:id="labelTrenchSize1" layoutX="29.0" layoutY="331.0" text="Pipe stock" textFill="#77b6bf" />
-            <ComboBox fx:id="boxPypeStock" layoutX="114.0" layoutY="327.0" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #bedfe4;">
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
-            </ComboBox>
-            <Label fx:id="labelTypePipe" layoutX="275.0" layoutY="331.0" text="Pipe stock" textFill="#77b6bf" />
-            <ComboBox fx:id="boxTypePipe" layoutX="349.0" layoutY="327.0" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #bedfe4;">
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
-            </ComboBox>
-            <Label fx:id="labelAdditionalOptions" layoutX="316.0" layoutY="23.0" text="Additional options" textFill="#77b6bf" />
-            <RadioButton fx:id="button1" layoutX="322.0" layoutY="47.0" mnemonicParsing="false" text="RadioButton" textFill="#77b6bf" />
-            <RadioButton fx:id="button2" layoutX="322.0" layoutY="97.0" mnemonicParsing="false" text="RadioButton" textFill="#77b6bf" />
-            <RadioButton fx:id="button3" layoutX="322.0" layoutY="72.0" mnemonicParsing="false" text="RadioButton" textFill="#77b6bf" />
-            <RadioButton fx:id="button4" layoutX="322.0" layoutY="126.0" mnemonicParsing="false" text="RadioButton" textFill="#77b6bf" />
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="emptyRightPanel" layoutX="257.0" prefHeight="400.0" prefWidth="535.0" style="-fx-background-color: #3D5956;" />
-   </children>
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.96" prefHeight="400.0" prefWidth="792.0" style="-fx-background-color: #bedfe4;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fred.view.MainWindowController">
+    <children>
+        <AnchorPane fx:id="leftBar" prefHeight="400.0" prefWidth="253.0" style="-fx-background-color: #3D4956;">
+            <children>
+                <Button fx:id="singUp" layoutX="121.0" layoutY="131.0" mnemonicParsing="false" onAction="#action" onMouseExited="#mouseReMoved" onMouseMoved="#mouseMoved" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #3999a8;" text="Sing up" />
+                <Label layoutX="25.0" layoutY="97.0" text="Password" textFill="#77b6bf" />
+                <Label layoutX="42.0" layoutY="69.0" text="Log in" textFill="#77b6bf" />
+                <TextField fx:id="fieldLogIn" layoutX="80.0" layoutY="65.0" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #bedfe4;" />
+                <PasswordField fx:id="fieldPassword" layoutX="80.0" layoutY="93.0" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #bedfe4;" />
+                <Button fx:id="logIn" layoutX="50.0" layoutY="131.0" mnemonicParsing="false" onAction="#action" onMouseExited="#mouseReMoved" onMouseMoved="#mouseMoved" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #3999a8;" text="Log in" />
+                <Button fx:id="buttonSheetAmount" layoutX="51.0" layoutY="301.0" mnemonicParsing="false" onAction="#action" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: #77b6bf;" text="Sheet amount" />
+                <Button fx:id="buttonCurrent" layoutX="51.0" layoutY="331.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: #77b6bf;" text="Current" />
+                <Button fx:id="buttonLighting" layoutX="51.0" layoutY="361.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: #77b6bf;" text="Lighting" />
+                <Label fx:id="labelMain" layoutX="36.0" layoutY="4.0" onMouseClicked="#actionLabel" onMouseExited="#mouseReMoved" onMouseMoved="#mouseMoved" prefHeight="55.0" prefWidth="210.0" text="Sheet Amount" textFill="#bedfe4" underline="true">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="rightBarSheetAmount" layoutX="257.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="535.0" style="-fx-background-color: #3D5956;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+            <children>
+                <Label fx:id="userName" layoutX="33.0" layoutY="14.0" prefHeight="3.0" prefWidth="305.0" text="Label" textFill="#77b6bf" />
+                <Label fx:id="labelNameDistrict" layoutX="33.0" layoutY="47.0" text="Name district" textFill="#77b6bf" />
+                <TextField fx:id="textAreaNameDistrict" layoutX="118.0" layoutY="43.0" style="-fx-background-color: #bedfe4;" />
+                <Label fx:id="labelTrenchSize" layoutX="33.0" layoutY="84.0" text="Trench size" textFill="#77b6bf" />
+                <ComboBox fx:id="boxTrenchType" layoutX="118.0" layoutY="80.0" prefHeight="25.0" prefWidth="149.0" promptText="Trench type" style="-fx-background-color: #bedfe4;">
+                    <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                    </cursor>
+                </ComboBox>
+                <Label fx:id="labelHeight" layoutX="118.0" layoutY="126.0" text="Height" textFill="#77b6bf" />
+                <TextField fx:id="textAreaHeight" layoutX="163.0" layoutY="122.0" prefHeight="25.0" prefWidth="104.0" style="-fx-background-color: #bedfe4;" />
+                <Label fx:id="labelWidth" layoutX="118.0" layoutY="162.0" text="Width" textFill="#77b6bf" />
+                <TextField fx:id="textAreaWidth" layoutX="163.0" layoutY="158.0" prefHeight="25.0" prefWidth="104.0" style="-fx-background-color: #bedfe4;" />
+                <Label fx:id="labelLineLong" layoutX="34.0" layoutY="204.0" text="Line long" textFill="#77b6bf" />
+                <TextField fx:id="textAreaNameDistrict1" layoutX="115.0" layoutY="200.0" prefHeight="29.0" prefWidth="149.0" style="-fx-background-color: #bedfe4;" />
+                <Label fx:id="labelNameDistrict11" layoutX="33.0" layoutY="226.0" prefHeight="51.0" prefWidth="71.0" text="Quantity of branches" textFill="#77b6bf" wrapText="true" />
+                <TextField fx:id="textAreaNameDistrict11" layoutX="115.0" layoutY="239.0" prefHeight="29.0" prefWidth="149.0" style="-fx-background-color: #bedfe4;" />
+                <Label fx:id="labelNameDistrict111" layoutX="32.0" layoutY="268.0" prefHeight="51.0" prefWidth="71.0" text="Long crossing" textAlignment="JUSTIFY" textFill="#77b6bf" wrapText="true" />
+                <TextField fx:id="textAreaLongCrossing" layoutX="114.0" layoutY="281.0" prefHeight="29.0" prefWidth="149.0" style="-fx-background-color: #bedfe4;" />
+                <Label fx:id="labelTrenchSize1" layoutX="29.0" layoutY="331.0" text="Pipe stock" textFill="#77b6bf" />
+                <ComboBox fx:id="boxPypeStock" layoutX="114.0" layoutY="327.0" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #bedfe4;">
+                    <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                    </cursor>
+                </ComboBox>
+                <Label fx:id="labelTypePipe" layoutX="275.0" layoutY="331.0" text="Pipe stock" textFill="#77b6bf" />
+                <ComboBox fx:id="boxTypePipe" layoutX="349.0" layoutY="327.0" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #bedfe4;">
+                    <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                    </cursor>
+                </ComboBox>
+                <Label fx:id="labelAdditionalOptions" layoutX="316.0" layoutY="23.0" text="Additional options" textFill="#77b6bf" />
+                <RadioButton fx:id="button1" layoutX="322.0" layoutY="47.0" mnemonicParsing="false" text="RadioButton" textFill="#77b6bf" />
+                <RadioButton fx:id="button2" layoutX="322.0" layoutY="97.0" mnemonicParsing="false" text="RadioButton" textFill="#77b6bf" />
+                <RadioButton fx:id="button3" layoutX="322.0" layoutY="72.0" mnemonicParsing="false" text="RadioButton" textFill="#77b6bf" />
+                <RadioButton fx:id="button4" layoutX="322.0" layoutY="126.0" mnemonicParsing="false" text="RadioButton" textFill="#77b6bf" />
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="emptyRightPanel" layoutX="257.0" prefHeight="400.0" prefWidth="535.0" style="-fx-background-color: #3D5956;" />
+    </children>
 </AnchorPane>

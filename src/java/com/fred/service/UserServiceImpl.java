@@ -14,13 +14,28 @@ import java.util.Map;
 @Service
 public class UserServiceImpl implements UserService {
     private long id = 0;
-    private Map<Long, User> users = new HashMap<>();
+    private Map<Long, User> users;
 
-    @Override
     public User saveUser(User user) {
+        if (this.users == null)
+            this.users = new  HashMap<>();
+        if (!checkOriginal(user.getLogData().getLogIn())) {
+            return null;
+        }
         user.setUserId(id++);
         users.put(user.getUserId(),user);
         return user;
+    }
+
+    private boolean checkOriginal(String logIn) {
+        boolean check = true;
+        for (User user : users.values()) {
+            if (user.getLogData().getLogIn().equals(logIn)) {
+                check = false;
+                break;
+            }
+        }
+        return check;
     }
 
     @Override
@@ -41,6 +56,21 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> getUsers(String firstName) {
         return null;
+    }
+
+    @Override
+    public Long getUserId(String name, String password) {
+        if (this.users == null)
+            this.users = new  HashMap<>();
+        Long id = null;
+        for (User user : users.values()) {
+            if (!user.getLogData().getLogIn().equals(name))
+                continue;
+            if (!user.getLogData().getPassword().equals(password))
+                continue;
+            id = user.getUserId();
+        }
+        return id;
     }
 
     public void setUsers(Map<Long, User> users) {

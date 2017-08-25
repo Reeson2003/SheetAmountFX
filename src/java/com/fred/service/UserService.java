@@ -17,4 +17,6 @@ public interface UserService {
     List<User> getUsers();
 
     List<User> getUsers(String firstName);
+
+    Long getUserId(String name, String password);
 }

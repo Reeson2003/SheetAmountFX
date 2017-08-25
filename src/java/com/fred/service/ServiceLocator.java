@@ -17,6 +17,9 @@ public class ServiceLocator {
     }
 
     public static UserService getUserService() {
+        if (userService == null) {
+            userService = new UserServiceImpl();
+        }
         return userService;
     }
 }

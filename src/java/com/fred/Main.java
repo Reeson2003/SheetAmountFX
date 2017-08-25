@@ -1,11 +1,8 @@
 package com.fred;
 
-import com.fred.entity.User;
-import com.fred.service.ServiceLocator;
-import com.fred.service.UserService;
+import com.fred.controller.Header;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Created by nimtego_loc on 19.08.2017.
@@ -16,19 +13,15 @@ public class Main {
     public static void main(String[] args) {
         LOGGER.debug("Hello");
         LOGGER_M.info("FRED");
+        Header header = new Header();
+        header.running();
 
-        new ClassPathXmlApplicationContext("applicationContext.xml");
+/*        new ClassPathXmlApplicationContext("applicationContext.xml");
 
         UserService service = ServiceLocator.getUserService();
 
         User user = new User();
-        user.setFirstName("Vasya");
         user = service.saveUser(user);
-
-        user = service.getUser(user.getUserId());
-
-        LOGGER.debug(user.getUserId() + " " + user.getFirstName());
-
-        LOGGER.debug(String .valueOf(service == null));
+        user = service.getUser(user.getUserId());*/
     }
 }
