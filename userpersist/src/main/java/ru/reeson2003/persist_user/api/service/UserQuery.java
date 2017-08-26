@@ -22,13 +22,21 @@ public interface UserQuery {
     String REGISTER_DATE = "registerdate";
     String UPDATE_DATE = "updateDate";
 
-    UserQuery firstName();
-    UserQuery middleName();
-    UserQuery lastname();
+    UserQuery firstName(String firstName);
+    UserQuery firstNameLike(String pattern);
+    UserQuery middleName(String middleName);
+    UserQuery middleNameLike(String pattern);
+    UserQuery lastName(String lastName);
+    UserQuery lastNameLike(String pattern);
+    UserQuery email(String email);
+    UserQuery emailLike(String pattern);
+    UserQuery login(String login);
+    UserQuery loginLike(String pattern);
+    UserQuery loggedIn(boolean loggedIn);
     UserQuery orderBy(String parameter);
-//    UserQuery birthdate();
-//    UserQuery registerDate();
-//    UserQuery updateDate();
+    DateQuery birthDate();
+    DateQuery registerDate();
+    DateQuery updateDate();
     List<User> user() throws UserPersistException;
     User singleResult() throws UserPersistException;
 }
