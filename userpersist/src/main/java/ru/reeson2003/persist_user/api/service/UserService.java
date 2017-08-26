@@ -21,6 +21,8 @@ public interface UserService {
 
     void deleteUser(User user) throws UserPersistException;
 
+    User findByLogin(String login) throws UserPersistException;
+
     List<User> getUsers() throws UserPersistException;
 
     UserQuery createUserQery();

@@ -14,11 +14,20 @@ public class User {
     private String middleName;
     private String lastName;
     private Date birthDate;
-    private String emeail;
+    private String email;
     private String login;
     private String password;
-    private Date registerdate;
+    private Date registerDate;
     private Date updateDate;
+    private boolean loggedIn;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -52,12 +61,12 @@ public class User {
         this.birthDate = birthDate;
     }
 
-    public String getEmeail() {
-        return emeail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmeail(String emeail) {
-        this.emeail = emeail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getLogin() {
@@ -76,12 +85,12 @@ public class User {
         this.password = password;
     }
 
-    public Date getRegisterdate() {
-        return registerdate;
+    public Date getRegisterDate() {
+        return registerDate;
     }
 
-    public void setRegisterdate(Date registerdate) {
-        this.registerdate = registerdate;
+    public void setRegisterDate(Date registerDate) {
+        this.registerDate = registerDate;
     }
 
     public Date getUpdateDate() {
@@ -90,5 +99,13 @@ public class User {
 
     public void setUpdateDate(Date updateDate) {
         this.updateDate = updateDate;
+    }
+
+    public boolean isLoggedIn() {
+        return loggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        this.loggedIn = loggedIn;
     }
 }
