@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.96" prefHeight="400.0" prefWidth="792.0" style="-fx-background-color: #bedfe4;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fred.view.MainWindowController">
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.96" prefHeight="400.0" prefWidth="792.0" style="-fx-background-color: #bedfe4;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fred.view.MainWindowController">
     <children>
         <AnchorPane fx:id="leftBar" prefHeight="400.0" prefWidth="253.0" style="-fx-background-color: #3D4956;">
             <children>
@@ -28,6 +28,7 @@
                         <Font size="26.0" />
                     </font>
                 </Label>
+            <Button onAction="#action" fx:id="buttonExit" layoutX="13.0" layoutY="361.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="33.0" style="-fx-background-color: #77b6bf;" text="&lt;" />
             </children>
         </AnchorPane>
         <AnchorPane fx:id="rightBarSheetAmount" layoutX="257.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="535.0" style="-fx-background-color: #3D5956;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">

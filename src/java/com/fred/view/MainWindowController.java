@@ -29,6 +29,7 @@ public class MainWindowController {
     public Label labelMain;
     public Button buttonCurrent;
     public Button buttonLighting;
+    public Button buttonExit;
     private Map<String, AnchorPane> paneMap;
     public Button buttonSheetAmount;
     public AnchorPane mainAnchorPane;
@@ -53,7 +54,9 @@ public class MainWindowController {
     }
 
     public void action(ActionEvent actionEvent) {
-
+        if (buttonExit.isArmed()) {
+            owner.getPrimaryStage().close();
+        }
         if (singUp.isArmed()) {
             String logIn = fieldLogIn.getText();
             String password = fieldPassword.getText();
