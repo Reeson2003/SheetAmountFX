@@ -19,7 +19,7 @@ public interface UserService {
 
     void updateUser(User user) throws UserPersistException;
 
-    void deleteUser(User user) throws UserPersistException;
+    void deleteUser(long id) throws UserPersistException;
 
     User findByLogin(String login) throws UserPersistException;
 
