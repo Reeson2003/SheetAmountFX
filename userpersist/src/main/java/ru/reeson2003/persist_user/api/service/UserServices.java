@@ -13,7 +13,7 @@ public abstract class UserServices {
         return service;
     }
 
-    protected void setService(UserService service) {
+    protected void  setService(UserService service) {
         UserServices.service = service;
     }
 }

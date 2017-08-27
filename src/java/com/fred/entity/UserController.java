@@ -11,17 +11,11 @@ import ru.reeson2003.persist_user.api.service.UserServices;
  * on 25.08.2017.
  */
 public class UserController {
-    private UserServices userServices = new UserServicesStandard();
-
-    public UserController() {
-        this.userServices = new UserServicesStandard();
-    }
-
     public Long logInUser(String logIn, String password) throws ErrorMessageException, UserPersistException {
         if (logIn.isEmpty() || password.isEmpty()) {
             throw new ErrorMessageException(logIn.isEmpty() ? "Login empty" : "Password empty");
         }
-        userServices.getService().findByLogin(logIn);
+        UserServices.getService().findByLogin(logIn);
         return null;
     }
 
@@ -33,7 +27,7 @@ public class UserController {
         User user = new User();
         user.setPassword(password);
         user.setLogin(logIn);
-        userServices.getService().addUser(user);
+        UserServices.getService().addUser(user);
 
         return true;
     }

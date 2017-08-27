@@ -135,6 +135,8 @@ public class MainWindowController {
             ((Button) mouseEvent.getSource()).setTextFill(Color.BLACK);
         if (mouseEvent.getSource() instanceof Label)
             ((Label) mouseEvent.getSource()).setTextFill(color);
+        if (mouseEvent.getSource() instanceof TextField)
+            ((TextField) mouseEvent.getSource()).setText("GGGGG");
     }
 
     public void actionLabel(MouseEvent mouseEvent) {
