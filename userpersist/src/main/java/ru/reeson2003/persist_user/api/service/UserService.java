@@ -25,5 +25,5 @@ public interface UserService {
 
     List<User> getUsers() throws UserPersistException;
 
-    UserQuery createUserQery();
+    UserQuery createUserQuery();
 }
