@@ -10,9 +10,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.StageStyle;
+import ru.reeson2003.persist_user.api.UserPersistException;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 /**
@@ -29,23 +28,18 @@ public class MainWindowController {
     public Label labelMain;
     public Button buttonCurrent;
     public Button buttonLighting;
-    private Map<String, AnchorPane> paneMap;
+    public Button buttonExit;
     public Button buttonSheetAmount;
     public AnchorPane mainAnchorPane;
     private MainWindow owner;
     private Color color = Color.SKYBLUE;
-
-
-    public MainWindowController() {
-        this.paneMap = new HashMap<>();
-    }
+    private UserController userController;
 
     @FXML
     private void initialize() {
-/*        fieldLogIn.setText("Enter");
-        fieldPassword.setText("Enter");*/
         fieldLogIn.setStyle("-fx-control-inner-background: #3D4956");
         fieldPassword.setStyle("-fx-control-inner-background: #3D4956");
+        this.userController = new UserController();
     }
 
     public void setWindowOwner(MainWindow owner) {
@@ -53,18 +47,20 @@ public class MainWindowController {
     }
 
     public void action(ActionEvent actionEvent) {
-
+        if (buttonExit.isArmed()) {
+            owner.getPrimaryStage().close();
+        }
         if (singUp.isArmed()) {
             String logIn = fieldLogIn.getText();
             String password = fieldPassword.getText();
             try {
-                if (UserController.singUpUser(logIn, password)) {
+                if (userController.singUpUser(logIn, password)) {
                     labelMain.setText(logIn);
                     setLoginFormVisible(false);
                     moveMenu(true);
                 }
 
-            } catch (ErrorMessageException e) {
+            } catch (ErrorMessageException | UserPersistException e) {
                 alert(e.getMessage());
             }
 
@@ -73,21 +69,20 @@ public class MainWindowController {
             String logIn = fieldLogIn.getText();
             String password = fieldPassword.getText();
             try {
-                if (UserController.logInUser(logIn, password) != null) {
+                if (userController.logInUser(logIn, password) != null) {
                     labelMain.setText(logIn);
                     setLoginFormVisible(false);
                     moveMenu(true);
                 }
                 else
                     alert("Log in or password is wrong");
-            } catch (ErrorMessageException e) {
+            }
+            catch (ErrorMessageException | UserPersistException e) {
                 alert(e.getMessage());
             }
 
+
         }
-            /*owner.getPrimaryStage().close();*/
-
-
         if (buttonSheetAmount.isArmed()) {
             if (emptyRightPanel.isVisible()) {
                 emptyRightPanel.setVisible(false);
@@ -140,6 +135,8 @@ public class MainWindowController {
             ((Button) mouseEvent.getSource()).setTextFill(Color.BLACK);
         if (mouseEvent.getSource() instanceof Label)
             ((Label) mouseEvent.getSource()).setTextFill(color);
+        if (mouseEvent.getSource() instanceof TextField)
+            ((TextField) mouseEvent.getSource()).setText("GGGGG");
     }
 
     public void actionLabel(MouseEvent mouseEvent) {
