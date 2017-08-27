@@ -10,6 +10,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.StageStyle;
+import ru.reeson2003.persist_user.api.UserPersistException;
 
 import java.util.Random;
 
@@ -32,11 +33,13 @@ public class MainWindowController {
     public AnchorPane mainAnchorPane;
     private MainWindow owner;
     private Color color = Color.SKYBLUE;
+    private UserController userController;
 
     @FXML
     private void initialize() {
         fieldLogIn.setStyle("-fx-control-inner-background: #3D4956");
         fieldPassword.setStyle("-fx-control-inner-background: #3D4956");
+        this.userController = new UserController();
     }
 
     public void setWindowOwner(MainWindow owner) {
@@ -51,13 +54,13 @@ public class MainWindowController {
             String logIn = fieldLogIn.getText();
             String password = fieldPassword.getText();
             try {
-                if (UserController.singUpUser(logIn, password)) {
+                if (userController.singUpUser(logIn, password)) {
                     labelMain.setText(logIn);
                     setLoginFormVisible(false);
                     moveMenu(true);
                 }
 
-            } catch (ErrorMessageException e) {
+            } catch (ErrorMessageException | UserPersistException e) {
                 alert(e.getMessage());
             }
 
@@ -66,16 +69,18 @@ public class MainWindowController {
             String logIn = fieldLogIn.getText();
             String password = fieldPassword.getText();
             try {
-                if (UserController.logInUser(logIn, password) != null) {
+                if (userController.logInUser(logIn, password) != null) {
                     labelMain.setText(logIn);
                     setLoginFormVisible(false);
                     moveMenu(true);
                 }
                 else
                     alert("Log in or password is wrong");
-            } catch (ErrorMessageException e) {
+            }
+            catch (ErrorMessageException | UserPersistException e) {
                 alert(e.getMessage());
             }
+
 
         }
         if (buttonSheetAmount.isArmed()) {
