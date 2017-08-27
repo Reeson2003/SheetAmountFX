@@ -11,8 +11,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.StageStyle;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 /**
@@ -30,21 +28,13 @@ public class MainWindowController {
     public Button buttonCurrent;
     public Button buttonLighting;
     public Button buttonExit;
-    private Map<String, AnchorPane> paneMap;
     public Button buttonSheetAmount;
     public AnchorPane mainAnchorPane;
     private MainWindow owner;
     private Color color = Color.SKYBLUE;
 
-
-    public MainWindowController() {
-        this.paneMap = new HashMap<>();
-    }
-
     @FXML
     private void initialize() {
-/*        fieldLogIn.setText("Enter");
-        fieldPassword.setText("Enter");*/
         fieldLogIn.setStyle("-fx-control-inner-background: #3D4956");
         fieldPassword.setStyle("-fx-control-inner-background: #3D4956");
     }
@@ -88,9 +78,6 @@ public class MainWindowController {
             }
 
         }
-            /*owner.getPrimaryStage().close();*/
-
-
         if (buttonSheetAmount.isArmed()) {
             if (emptyRightPanel.isVisible()) {
                 emptyRightPanel.setVisible(false);

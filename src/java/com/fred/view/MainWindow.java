@@ -3,16 +3,15 @@ package com.fred.view;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
+import static com.fred.view.fxml.ReferenceFXML.MAIN_WINDOW;
 import static javafx.scene.paint.Color.TRANSPARENT;
 
 /**
@@ -22,28 +21,29 @@ public class MainWindow extends Application {
     private double xOffset;
     private double yOffset;
     private Stage primaryStage;
-    private BorderPane rootLayout;
-    private String fxml = "Main_window.fxml";
+    private AnchorPane anchorPane;
+
+
+    public static void run() {
+        launch();
+    }
 
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("AddressApp");
         this.primaryStage.initStyle(StageStyle.TRANSPARENT);
         initRootLayout();
     //    showPersonOverview();
     }
 
 
-    public void initRootLayout() {
+    private void initRootLayout() {
         try {
-            // Загружаем корневой макет из fxml файла.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainWindow.class.getResource(fxml));
-            Parent root = loader.load();
+            loader.setLocation(MainWindow.class.getResource(MAIN_WINDOW));
+            anchorPane = (AnchorPane) loader.load();
             ((MainWindowController) loader.getController()).setWindowOwner(this);
-          //  ResourceBundle.getBundle("Text.properties");
-            Scene scene = new Scene(root);
+            Scene scene = new Scene(anchorPane);
 
             movementWindowWithoutFrame(scene);
             scene.setFill(TRANSPARENT);
@@ -66,9 +66,8 @@ public class MainWindow extends Application {
             e.printStackTrace();
         }
     }
-    public Stage getPrimaryStage() {
-        return primaryStage;
-    }
+
+
     private void movementWindowWithoutFrame(Scene scene) {
         scene.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
@@ -86,7 +85,20 @@ public class MainWindow extends Application {
         });
     }
 
-    public static void run() {
-        launch();
+
+    public Stage getPrimaryStage() {
+        return primaryStage;
+    }
+
+    public void setPrimaryStage(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+    }
+
+    public AnchorPane getAnchorPane() {
+        return anchorPane;
+    }
+
+    public void setAnchorPane(AnchorPane anchorPane) {
+        this.anchorPane = anchorPane;
     }
 }
